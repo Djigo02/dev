@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="590.0" prefWidth="755.0" style="-fx-background-color: #18534f;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.djigo.parrainage.controllers.PageAdminController">
+   <children>
+      <AnchorPane layoutY="19.0" prefHeight="553.0" prefWidth="242.0" style="-fx-background-color: #fff;">
+         <children>
+            <Text layoutX="22.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtLogin" layoutX="24.0" layoutY="233.0" prefHeight="25.0" prefWidth="194.0" promptText="Votre login">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="25.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtNom" layoutX="24.0" layoutY="160.0" prefHeight="25.0" prefWidth="194.0" promptText="Votre nom">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPrenom" layoutX="24.0" layoutY="83.0" prefHeight="25.0" prefWidth="194.0" promptText="Votre prenom">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="24.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="37.0" layoutY="31.0" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un utilisateur" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="txtMotdepasse" layoutX="24.0" layoutY="309.0" prefHeight="25.0" prefWidth="194.0" promptText="Votre mot de passe">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="txtActived" layoutX="24.0" layoutY="376.0" prefHeight="25.0" prefWidth="194.0" promptText="activé/désactivé">
+               <font>
+                  <Font name="Times New Roman" size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="24.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activé/désactiver">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="23.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profil">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="cbbProfil" layoutX="24.0" layoutY="451.0" prefHeight="25.0" prefWidth="194.0" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tabUtilisateurs" layoutX="253.0" layoutY="170.0" onMouseClicked="#getUserInfo" prefHeight="328.0" prefWidth="502.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="41.0" text="ID" />
+          <TableColumn fx:id="nomCol" prefWidth="85.0" text="Nom" />
+            <TableColumn fx:id="prenomCol" prefWidth="121.0" text="Prenom" />
+            <TableColumn fx:id="loginCol" prefWidth="85.0" text="Login" />
+            <TableColumn fx:id="profilCol" prefWidth="85.0" text="Profil" />
+            <TableColumn fx:id="etatCol" prefWidth="85.0" text="Etat" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="278.0" layoutY="37.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+         <children>
+            <Text layoutX="30.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de candidats">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="nbrCandidat" layoutX="96.0" layoutY="48.0" prefHeight="20.0" prefWidth="13.0" text="0" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="517.0" layoutY="37.0" prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+         <children>
+            <Text layoutX="33.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre d'électeurs">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <Label fx:id="nbrElecteur" layoutX="93.0" layoutY="48.0" prefHeight="20.0" prefWidth="13.0" text="0" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnAjouter" layoutX="264.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnAjouter_clicked" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #ecf8f6;" text="Ajouter">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnModifier" layoutX="389.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnModifier_clicked" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #acf8ff;" text="Modifier">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSelectionner" layoutX="635.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnSelectionner_clicked" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #ecf8f6;" text="Selectionner">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSupprimer" layoutX="512.0" layoutY="526.0" mnemonicParsing="false" onAction="#btnSupprimer_clicked" prefHeight="31.0" prefWidth="111.0" style="-fx-background-color: #fc4e00;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

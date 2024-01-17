@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5d7052;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.djigo.parrainage.controllers.ConnexionController">
+   <children>
+      <AnchorPane layoutX="46.0" layoutY="39.0" prefHeight="324.0" prefWidth="506.0" style="-fx-background-color: #fff;">
+         <children>
+            <Text layoutX="209.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connexion">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="53.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtLogin" layoutX="53.0" layoutY="116.0" prefHeight="31.0" prefWidth="401.0" promptText="Votre login">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Text layoutX="54.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="txtMotdepasse" layoutX="54.0" layoutY="194.0" prefHeight="31.0" prefWidth="401.0" promptText="Votre mot de passe">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </PasswordField>
+            <Button fx:id="btnConnexion" layoutX="205.0" layoutY="255.0" mnemonicParsing="false" onAction="#onClickConnexion" style="-fx-background-color: #5d7052;" text="Connexion" textFill="WHITE">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

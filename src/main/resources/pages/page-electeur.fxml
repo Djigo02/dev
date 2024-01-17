@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="445.0" prefWidth="746.0" style="-fx-background-color: #226d68;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.djigo.parrainage.controllers.PageElecteurController">
+   <children>
+      <TableView fx:id="tabCandidat" layoutX="238.0" layoutY="62.0" prefHeight="301.0" prefWidth="508.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="41.0" text="ID" />
+            <TableColumn fx:id="nomCol" prefWidth="165.0" text="Nom" />
+            <TableColumn fx:id="prenomCol" prefWidth="218.0" text="Prenom" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnParrainer" layoutX="450.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnParrainer_clicked" prefHeight="25.0" prefWidth="103.0" text="Parrainer">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDeconnexion" layoutX="573.0" layoutY="388.0" mnemonicParsing="false" onAction="#btnDeconnexion_clicked" style="-fx-background-color: #fc4e00;" text="Deconnexion" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="16.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MES INFORMATIONS" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="14.0" layoutY="63.0" prefHeight="301.0" prefWidth="208.0" style="-fx-background-color: #fefeff;">
+         <children>
+            <Text layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtLogin" editable="false" layoutX="14.0" layoutY="51.0" promptText="Login">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPrenom" editable="false" layoutX="14.0" layoutY="115.0" promptText="Prenom">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="14.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtNom" editable="false" layoutX="14.0" layoutY="180.0" promptText="Nom">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtNbrParrainage" editable="false" layoutX="14.0" layoutY="250.0" promptText="Nombre parrainages">
+               <font>
+                  <Font name="Times New Roman Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Text layoutX="14.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de parrainage">
+               <font>
+                  <Font name="Times New Roman Bold" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="388.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES CANDIDATS" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
