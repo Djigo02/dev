@@ -1,10 +1,13 @@
 package sn.djigo.parrainage.controllers;
 
+import sn.djigo.parrainage.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import sn.djigo.parrainage.App;
 import sn.djigo.parrainage.dao.DBConnexion;
 import sn.djigo.parrainage.dao.IUtilisateur;
 import sn.djigo.parrainage.dao.UtilisateurImpl;
@@ -35,6 +38,8 @@ public class ConnexionController {
                 u = iUtilisateur.seConnecter(txtLogin.getText().trim(), txtMotdepasse.getText().trim());
                 if(u!=null){
                     Notification.NotifSuccess("Succès", "Connexion reussie !!");
+                    /// Passer les informations de l'utilisateur connecter a la variable static auth
+                    App.setAuth(u);
                     switch (u.getProfil()){
                         case 1:
                             Outils.load(event,"Page d'administrateur", "/pages/page-admin.fxml");

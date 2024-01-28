@@ -7,10 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="445.0" prefWidth="746.0" style="-fx-background-color: #226d68;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sn.djigo.parrainage.controllers.PageElecteurController">
    <children>
-      <TableView fx:id="tabCandidat" layoutX="238.0" layoutY="62.0" prefHeight="301.0" prefWidth="508.0">
+      <TableView fx:id="tabCandidat" layoutX="238.0" layoutY="62.0" onMouseClicked="#getCandidatData" prefHeight="301.0" prefWidth="508.0">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="41.0" text="ID" />
             <TableColumn fx:id="nomCol" prefWidth="165.0" text="Nom" />

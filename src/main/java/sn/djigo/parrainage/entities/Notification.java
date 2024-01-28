@@ -21,7 +21,7 @@ public class Notification {
         tray.setTitle(titre);
         tray.setMessage(message);
         tray.setNotificationType(type);
-        tray.showAndDismiss(Duration.seconds(2));
+        tray.showAndDismiss(Duration.seconds(3));
     }
 }
 

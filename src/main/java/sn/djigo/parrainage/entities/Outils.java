@@ -7,6 +7,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import sn.djigo.parrainage.App;
+import sn.djigo.parrainage.controllers.PageAdminController;
+import sn.djigo.parrainage.controllers.PageCandidatController;
+import sn.djigo.parrainage.controllers.PageElecteurController;
 
 import java.io.IOException;
 

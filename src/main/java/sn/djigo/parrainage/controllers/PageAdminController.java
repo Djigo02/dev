@@ -22,6 +22,17 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PageAdminController  implements Initializable {
+
+    private Utilisateur auth;
+
+    public Utilisateur getAuth() {
+        return auth;
+    }
+
+    public void setAuth(Utilisateur auth) {
+        this.auth = auth;
+    }
+
     private DBConnexion db = new DBConnexion();
 
     @FXML
@@ -89,15 +100,30 @@ public class PageAdminController  implements Initializable {
         }else {
             String sql = "INSERT INTO utilisateurs (prenom, nom, login, motdepasse, actived, profil) VALUES (?,?,?,?,?,?)";
             try{
-                if(Integer.parseInt(nbrCandidat.getText())<5){
+                if( cbbProfil.getSelectionModel().getSelectedItem().toString().equals("ROLE_ELECTEUR")){
                     db.initPrepare(sql);
                     db.getPstm().setString(1,txtPrenom.getText().trim());
                     db.getPstm().setString(2,txtNom.getText().trim());
                     db.getPstm().setString(3,txtLogin.getText().trim());
                     db.getPstm().setString(4,txtMotdepasse.getText().trim());
                     db.getPstm().setInt(5,Integer.parseInt(txtActived.getText().trim()));
-                    db.getPstm().setInt(6,
-                            cbbProfil.getSelectionModel().getSelectedItem().toString().equals("ROLE_CANDIDAT") ? 2 : 3);
+                    db.getPstm().setInt(6, 3);
+                    db.executeMaj();
+                    Notification.NotifSuccess("Succès", " Utilisateur ajouté avec succès !");
+                    loadNbrUser();
+                    loadTableUsers();
+                    loadCbbProfil();
+                    db.closeConnection();
+                    vider();
+                }else if(cbbProfil.getSelectionModel().getSelectedItem().toString().equals("ROLE_CANDIDAT") &&
+                        Integer.parseInt(nbrCandidat.getText())<5){
+                    db.initPrepare(sql);
+                    db.getPstm().setString(1,txtPrenom.getText().trim());
+                    db.getPstm().setString(2,txtNom.getText().trim());
+                    db.getPstm().setString(3,txtLogin.getText().trim());
+                    db.getPstm().setString(4,txtMotdepasse.getText().trim());
+                    db.getPstm().setInt(5,Integer.parseInt(txtActived.getText().trim()));
+                    db.getPstm().setInt(6, 2);
                     db.executeMaj();
                     Notification.NotifSuccess("Succès", " Utilisateur ajouté avec succès !");
                     loadNbrUser();

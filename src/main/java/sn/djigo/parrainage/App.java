@@ -5,8 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sn.djigo.parrainage.entities.Utilisateur;
 
 public class App extends Application {
+
+    public static Utilisateur auth = new Utilisateur();
+
+    public static Utilisateur getAuth() {
+        return auth;
+    }
+
+    public static void setAuth(Utilisateur auth) {
+        App.auth = auth;
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
